@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
 const SimplifyDateTime = (dateTime) => {
+  return Intl.DateTimeFormat('en-US').format(dateTime)
     const now = new Date(Date.now());
     const dt = new Date(dateTime);
     const elapsedMinutes = now.getMinutes() - dt.getMinutes();
     const elapsedHours = now.getHours() - dt.getHours();
+    console.log(dt,elapsedMinutes);
     if (elapsedMinutes < 0)
         return "Future!";
     if (elapsedMinutes < 5)
