@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import InfoCard from "./InfoCard";
+import TeaInfo from "./TeaInfo";
 
 function Home(props) {
   return (
@@ -13,7 +13,6 @@ function Home(props) {
           color: "white",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundColor: "yellow",
           backgroundImage: `url('https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')`,
         }}
       >
@@ -27,14 +26,15 @@ function Home(props) {
                   pouring hot or boiling water over cured leaves of the Camellia
                   sinensis, an evergreen shrub (bush) native to East Asia
                   <br />
-                  <a className="btn btn-dark">Learn More</a>
+                  <a href="/tea" className="btn btn-dark">Learn More</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div>
+        <TeaInfo teaInfo={props.teaInfo}/>
+      {/* <div>
         {props.teaInfo.map((t,index) => (
           <InfoCard
             key={t.id}
@@ -45,7 +45,7 @@ function Home(props) {
             idx={index}
           />
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
